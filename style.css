@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Gloria+Hallelujah&display=swap');
+
 :root {
     --card-width: 300px;
     --border-radius: 5px;
@@ -18,8 +20,48 @@ body {
 	min-height: 100vh;
 }
 
-.title {
+h1 {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
     width: 95%;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 0px 0px 5px #70a3d9, 0px 0px 10px #70a3d9, 0px 0px 10px #70a3d9,
+    0px 0px 20px #70a3d9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-clip: text;
+}
+
+.update-Btn {
+    margin-bottom: 20px;
+}
+
+/* .tabs-container {
+    border-radius: 10px;
+} */
+
+.tab {
+    background-color: #f1f1f1;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+/* .tab:active {
+    background-color: #70a3d9;
+} */
+
+.selected-tab {
+    background-color: #70a3d9;
 }
 
 .container {

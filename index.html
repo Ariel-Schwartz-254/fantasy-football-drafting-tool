@@ -13,136 +13,308 @@
 <body>
     <div class="container">
         <h1 class="title">Fantasy Football Rankings</h1>
-        <!-- <table class="table table-striped table-bordered">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Round 1</th>
-                <th scope="col">Round 2</th>
-                <th scope="col">Round 3</th>
-                <th scope="col">Round 4</th>
-                <th scope="col">Round 5</th>
-                <th scope="col">Round 6</th>
-                <th scope="col">Round 7</th>
-                <th scope="col">Round 8</th>
-                <th scope="col">Round 9</th>
-                <th scope="col">Round 10</th>
-                <th scope="col">Round 11</th>
-                <th scope="col">Round 12</th>
-                <th scope="col">Round 13</th>
-                <th scope="col">Round 14</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Christian McCafferey</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Mark</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Mark</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Mark</td>
-              </tr>
-            </tbody>
-          </table> -->
-        <button class="update-button" id="update">Update</button>
-        <div class="rounds-container">
+        <button class="update-Btn" id="update-Btn">Update</button>
+        <div class="tabs-container">
+            <button class="tab selected-tab" onclick="changeTab(event, 'combined')">Combined</button>
+            <button class="tab" onclick="changeTab(event, 'wr')">WR</button>
+            <button class="tab" onclick="changeTab(event, 'rb')">RB</button>
+            <button class="tab" onclick="changeTab(event, 'qb')">QB</button>
+            <button class="tab" onclick="changeTab(event, 'te')">TE</button>
+            <button class="tab" onclick="changeTab(event, 'def')">DEF</button>
+        </div>
+        <div id="combined-tab" class="rounds-container">
             <div class="round-1">
-                <ul id="round-1" aria-label="Round 1">
+                <ul id="combined-round-1" aria-label="Round 1">
                 </ul>
             </div>
             <div class="round-2">
-                <ul id="round-2" aria-label="Round 2">
+                <ul id="combined-round-2" aria-label="Round 2">
                 </ul>
             </div>
             <div class="round-3">
-                <ul id="round-3" aria-label="Round 3">
+                <ul id="combined-round-3" aria-label="Round 3">
                 </ul>
             </div>
             <div class="round-4">
-                <ul id="round-4" aria-label="Round 4">
+                <ul id="combined-round-4" aria-label="Round 4">
                 </ul>
             </div>
             <div class="round-5">
-                <ul id="round-5" aria-label="Round 5">
+                <ul id="combined-round-5" aria-label="Round 5">
                 </ul>
             </div>
             <div class="round-6">
-                <ul id="round-6" aria-label="Round 6">
+                <ul id="combined-round-6" aria-label="Round 6">
                 </ul>
             </div>
             <div class="round-7">
-                <ul id="round-7" aria-label="Round 7">
+                <ul id="combined-round-7" aria-label="Round 7">
                 </ul>
             </div>
             <div class="round-8">
-                <ul id="round-8" aria-label="Round 8">
+                <ul id="combined-round-8" aria-label="Round 8">
                 </ul>
             </div>
             <div class="round-9">
-                <ul id="round-9" aria-label="Round 9">
+                <ul id="combined-round-9" aria-label="Round 9">
                 </ul>
             </div>
             <div class="round-10">
-                <ul id="round-10" aria-label="Round 10">
+                <ul id="combined-round-10" aria-label="Round 10">
                 </ul>
             </div>
             <div class="round-11">
-                <ul id="round-11" aria-label="Round 11">
+                <ul id="combined-round-11" aria-label="Round 11">
                 </ul>
             </div>
             <div class="round-12">
-                <ul id="round-12" aria-label="Round 12">
+                <ul id="combined-round-12" aria-label="Round 12">
                 </ul>
             </div>
             <div class="round-13">
-                <ul id="round-13" aria-label="Round 13">
+                <ul id="combined-round-13" aria-label="Round 13">
                 </ul>
             </div>
             <div class="round-14">
-                <ul id="round-14" aria-label="Round 14">
+                <ul id="combined-round-14" aria-label="Round 14">
+                </ul>
+            </div>
+        </div>
+        <div id="wr-tab" class="rounds-container" style="display:none;">
+            <div class="round-1">
+                <ul id="wr-round-1" aria-label="Round 1">
+                </ul>
+            </div>
+            <div class="round-2">
+                <ul id="wr-round-2" aria-label="Round 2">
+                </ul>
+            </div>
+            <div class="round-3">
+                <ul id="wr-round-3" aria-label="Round 3">
+                </ul>
+            </div>
+            <div class="round-4">
+                <ul id="wr-round-4" aria-label="Round 4">
+                </ul>
+            </div>
+            <div class="round-5">
+                <ul id="wr-round-5" aria-label="Round 5">
+                </ul>
+            </div>
+            <div class="round-6">
+                <ul id="wr-round-6" aria-label="Round 6">
+                </ul>
+            </div>
+            <div class="round-7">
+                <ul id="wr-round-7" aria-label="Round 7">
+                </ul>
+            </div>
+            <div class="round-8">
+                <ul id="wr-round-8" aria-label="Round 8">
+                </ul>
+            </div>
+            <div class="round-9">
+                <ul id="wr-round-9" aria-label="Round 9">
+                </ul>
+            </div>
+            <div class="round-10">
+                <ul id="wr-round-10" aria-label="Round 10">
+                </ul>
+            </div>
+            <div class="round-11">
+                <ul id="wr-round-11" aria-label="Round 11">
+                </ul>
+            </div>
+            <div class="round-12">
+                <ul id="wr-round-12" aria-label="Round 12">
+                </ul>
+            </div>
+            <div class="round-13">
+                <ul id="wr-round-13" aria-label="Round 13">
+                </ul>
+            </div>
+            <div class="round-14">
+                <ul id="wr-round-14" aria-label="Round 14">
+                </ul>
+            </div>
+        </div>
+        <div id="rb-tab" class="rounds-container" style="display:none;">
+            <div class="round-1">
+                <ul id="rb-round-1" aria-label="Round 1">
+                </ul>
+            </div>
+            <div class="round-2">
+                <ul id="rb-round-2" aria-label="Round 2">
+                </ul>
+            </div>
+            <div class="round-3">
+                <ul id="rb-round-3" aria-label="Round 3">
+                </ul>
+            </div>
+            <div class="round-4">
+                <ul id="rb-round-4" aria-label="Round 4">
+                </ul>
+            </div>
+            <div class="round-5">
+                <ul id="rb-round-5" aria-label="Round 5">
+                </ul>
+            </div>
+            <div class="round-6">
+                <ul id="rb-round-6" aria-label="Round 6">
+                </ul>
+            </div>
+            <div class="round-7">
+                <ul id="rb-round-7" aria-label="Round 7">
+                </ul>
+            </div>
+            <div class="round-8">
+                <ul id="rb-round-8" aria-label="Round 8">
+                </ul>
+            </div>
+            <div class="round-9">
+                <ul id="rb-round-9" aria-label="Round 9">
+                </ul>
+            </div>
+            <div class="round-10">
+                <ul id="rb-round-10" aria-label="Round 10">
+                </ul>
+            </div>
+            <div class="round-11">
+                <ul id="rb-round-11" aria-label="Round 11">
+                </ul>
+            </div>
+            <div class="round-12">
+                <ul id="rb-round-12" aria-label="Round 12">
+                </ul>
+            </div>
+            <div class="round-13">
+                <ul id="rb-round-13" aria-label="Round 13">
+                </ul>
+            </div>
+            <div class="round-14">
+                <ul id="rb-round-14" aria-label="Round 14">
+                </ul>
+            </div>
+        </div>
+        <div id="qb-tab" class="rounds-container" style="display:none;">
+            <div class="round-1">
+                <ul id="qb-round-1" aria-label="Round 1">
+                </ul>
+            </div>
+            <div class="round-2">
+                <ul id="qb-round-2" aria-label="Round 2">
+                </ul>
+            </div>
+            <div class="round-3">
+                <ul id="qb-round-3" aria-label="Round 3">
+                </ul>
+            </div>
+            <div class="round-4">
+                <ul id="qb-round-4" aria-label="Round 4">
+                </ul>
+            </div>
+            <div class="round-5">
+                <ul id="qb-round-5" aria-label="Round 5">
+                </ul>
+            </div>
+            <div class="round-6">
+                <ul id="qb-round-6" aria-label="Round 6">
+                </ul>
+            </div>
+            <div class="round-7">
+                <ul id="qb-round-7" aria-label="Round 7">
+                </ul>
+            </div>
+            <div class="round-8">
+                <ul id="qb-round-8" aria-label="Round 8">
+                </ul>
+            </div>
+            <div class="round-9">
+                <ul id="qb-round-9" aria-label="Round 9">
+                </ul>
+            </div>
+            <div class="round-10">
+                <ul id="qb-round-10" aria-label="Round 10">
+                </ul>
+            </div>
+            <div class="round-11">
+                <ul id="qb-round-11" aria-label="Round 11">
+                </ul>
+            </div>
+            <div class="round-12">
+                <ul id="qb-round-12" aria-label="Round 12">
+                </ul>
+            </div>
+            <div class="round-13">
+                <ul id="qb-round-13" aria-label="Round 13">
+                </ul>
+            </div>
+            <div class="round-14">
+                <ul id="qb-round-14" aria-label="Round 14">
+                </ul>
+            </div>
+        </div>
+        <div id="te-tab" class="rounds-container" style="display:none;">
+            <div class="round-1">
+                <ul id="te-round-1" aria-label="Round 1">
+                </ul>
+            </div>
+            <div class="round-2">
+                <ul id="te-round-2" aria-label="Round 2">
+                </ul>
+            </div>
+            <div class="round-3">
+                <ul id="te-round-3" aria-label="Round 3">
+                </ul>
+            </div>
+            <div class="round-4">
+                <ul id="te-round-4" aria-label="Round 4">
+                </ul>
+            </div>
+            <div class="round-5">
+                <ul id="te-round-5" aria-label="Round 5">
+                </ul>
+            </div>
+            <div class="round-6">
+                <ul id="te-round-6" aria-label="Round 6">
+                </ul>
+            </div>
+            <div class="round-7">
+                <ul id="te-round-7" aria-label="Round 7">
+                </ul>
+            </div>
+            <div class="round-8">
+                <ul id="te-round-8" aria-label="Round 8">
+                </ul>
+            </div>
+            <div class="round-9">
+                <ul id="te-round-9" aria-label="Round 9">
+                </ul>
+            </div>
+            <div class="round-10">
+                <ul id="te-round-10" aria-label="Round 10">
+                </ul>
+            </div>
+            <div class="round-11">
+                <ul id="te-round-11" aria-label="Round 11">
+                </ul>
+            </div>
+            <div class="round-12">
+                <ul id="te-round-12" aria-label="Round 12">
+                </ul>
+            </div>
+            <div class="round-13">
+                <ul id="te-round-13" aria-label="Round 13">
+                </ul>
+            </div>
+            <div class="round-14">
+                <ul id="te-round-14" aria-label="Round 14">
+                </ul>
+            </div>
+        </div>
+        <div id="def-tab" class="rounds-container" style="display:none;">
+            <div class="round-1">
+                <ul id="def-round-1" aria-label="Defense">
                 </ul>
             </div>
         </div>
