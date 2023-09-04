@@ -9,7 +9,7 @@ const USERNAME = 'schwartz254'; //"RayRayRhodes"
 const USER_ID = ''; //710595581638180864
 const LEAGUE_ID = "982247738458906624";
 const DRAFT_ID = '982247740212125696';
-const MOCK_DRAFT_ID = '1004408279004446720';
+const MOCK_DRAFT_ID = '1004422088788107264';
 
 let username = '';
 let userId = '';
