@@ -193,7 +193,7 @@ window.getUserInformation = getUserInformation;
 // Fetch players who have already been selected
 async function getPicks() {
     try {
-        const response = await fetch(`https://api.sleeper.app/v1/draft/${MOCK_DRAFT_ID}/picks`)
+        const response = await fetch(`https://api.sleeper.app/v1/draft/${DRAFT_ID}/picks`)
         selectedPlayers = await response.json()
     } catch (error) {
         console.log('Failed to fetch quotes', error);
