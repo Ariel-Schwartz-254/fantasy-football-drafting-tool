@@ -207,17 +207,18 @@ function findBestPickRoundFiveSix(currentRound) {
             // ELSE, take best available player of either position
 function findBestPickRoundSeven(currentRound) {
     let bestPick = "";
+    let targetRound;
     const myTeamHasQb = myTeam.QB.count > 0;
     const myTeamHasTe = myTeam.TE.count > 0;
     const wrUnderMinimum = myTeam.WR.count < myTeam.WR.min;
     if (!myTeamHasQb) { 
         lateQbTaken = true;
         if (positionAvailableAbove(currentRound, qbRankings)) {
-            let targetRound = findHighestRoundWithPlayers(qbRankings);
+            targetRound = findHighestRoundWithPlayers(qbRankings);
             bestPick = selectBestAvailable(qbRankings, targetRound);
             return bestPick;
         } else if(!myTeamHasTe) {
-            let targetRound = findHighestRoundWithPlayers(teRankings);
+            targetRound = findHighestRoundWithPlayers(teRankings);
             if (!myTeamHasTe && positionAvailableAbove(currentRound, teRankings)) {
                 bestPick = selectBestAvailable(teRankings, targetRound);
                 return bestPick;
@@ -238,7 +239,7 @@ function findBestPickRoundSeven(currentRound) {
             bestPick = selectBestAvailable(rbRankings, targetRound);
         }
     } else if(!myTeamHasTe) {
-        let targetRound = findHighestRoundWithPlayers(teRankings);
+        targetRound = findHighestRoundWithPlayers(teRankings);
         if (!myTeamHasTe && positionAvailableAbove(currentRound, teRankings)) {
             bestPick = selectBestAvailable(teRankings, targetRound);
             return bestPick;
