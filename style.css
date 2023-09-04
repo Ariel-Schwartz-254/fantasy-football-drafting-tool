@@ -20,6 +20,14 @@ body {
 	min-height: 100vh;
 }
 
+.heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* z-index: 10; */
+    /* position: fixed; */
+}
+
 h1 {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     text-transform: uppercase;
@@ -34,8 +42,53 @@ h1 {
     background-clip: text;
 }
 
+.username-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.suggestion-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.suggestedPosition, 
+.suggestedPlayer {
+    display: flex;
+    align-items: center;
+}
+
+.suggestedPosition div,
+.suggestedPlayer div {
+  margin-right: 5px;
+}
+
+.suggestion-title {
+    background-color: #f2f2f2;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.suggestion-value {
+    background-color: #70a3d9;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid black;
+    border-radius: 8px;
+}
+
 .update-Btn {
     margin-bottom: 20px;
+    font-family: Roboto, Arial, Arial, Helvetica, sans-serif;
+    border-radius: 10px;
 }
 
 /* .tabs-container {
@@ -44,6 +97,7 @@ h1 {
 
 .tab {
     background-color: #f1f1f1;
+    font-family: Roboto, Arial, Arial, Helvetica, sans-serif;
     float: left;
     border: none;
     outline: none;

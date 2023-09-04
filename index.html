@@ -11,16 +11,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Main Container -->
     <div class="container">
-        <h1 class="title">Fantasy Football Rankings</h1>
-        <button class="update-Btn" id="update-Btn">Update</button>
-        <div class="tabs-container">
-            <button class="tab selected-tab" onclick="changeTab(event, 'combined')">Combined</button>
-            <button class="tab" onclick="changeTab(event, 'wr')">WR</button>
-            <button class="tab" onclick="changeTab(event, 'rb')">RB</button>
-            <button class="tab" onclick="changeTab(event, 'qb')">QB</button>
-            <button class="tab" onclick="changeTab(event, 'te')">TE</button>
-            <button class="tab" onclick="changeTab(event, 'def')">DEF</button>
+        <div class="heading-container">
+            <h1 class="title">Fantasy Football Rankings</h1>
+            <div class="username-input" id="username-input-container">
+                <label for="User Name">UserName</label>
+                <input type="text" id="usernameInput">
+                <button onclick="getUserInformation()">Submit</button>
+            </div>
+            <div class="suggestion-box" id="suggestion-container">
+                <div class="suggestedPosition">
+                    <div class="suggestion-title">Suggested Position: </div>
+                    <div class="suggestion-value" id="suggestedPosition"></div>
+                </div>
+                <div class="suggestedPlayer">
+                    <div class="suggestion-title">Suggested Player: </div>
+                    <div class="suggestion-value" id="suggestedPlayer"></div>
+                </div>
+            </div>
+            <button class="update-Btn" id="update-Btn">Update</button>
+            <div class="tabs-container">
+                <button class="tab selected-tab" onclick="changeTab(event, 'combined')">Combined</button>
+                <button class="tab" onclick="changeTab(event, 'wr')">WR</button>
+                <button class="tab" onclick="changeTab(event, 'rb')">RB</button>
+                <button class="tab" onclick="changeTab(event, 'qb')">QB</button>
+                <button class="tab" onclick="changeTab(event, 'te')">TE</button>
+                <button class="tab" onclick="changeTab(event, 'def')">DEF</button>
+            </div>
         </div>
         <div id="combined-tab" class="rounds-container">
             <div class="round-1">
@@ -320,6 +338,6 @@
         </div>
     </div>
     <!-- Script -->
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
