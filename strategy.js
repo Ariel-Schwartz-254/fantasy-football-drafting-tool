@@ -1,11 +1,11 @@
 const suggestedPositionEl = document.getElementById("suggestedPosition");
 const suggestedPlayerEl = document.getElementById("suggestedPlayer");
 
-import { draftPickNumber } from "./script.js";
-import { combinedPlayerRankings, wrRankings, rbRankings, qbRankings, teRankings, defRankings } from "./position-rankings.js";
+import { draftPickNumber } from "./update-rankings.js";
+import { rankings } from "./position-rankings.js";
 
-const numberOfTeams = 12;
-const roundsInDraft = 15;
+// Destructuring the rankings object
+const { combined: combinedPlayerRankings, wr: wrRankings, rb: rbRankings, qb: qbRankings, te: teRankings, def: defRankings } = rankings;
 
 let lateQbTaken = false;
 let lateTeTaken = false;
@@ -44,27 +44,6 @@ const myTeam = {
 };
 
 const teamPositionTypes = ["WR", "RB", "QB", "TE", "DEF"];
-
-function calculatePickNumbers(initialPick) {
-    const pickNumbers = [];
-    const firstSnake = initialPick;
-    const secondSnake = (numberOfTeams + 1) - initialPick;
-    let pickPosition = firstSnake;
-    for(let i=0; i < roundsInDraft; i++) {
-        pickNumbers.push(numberOfTeams * i + pickPosition);
-        if (pickPosition === firstSnake) {
-            pickPosition = secondSnake;
-        } else {
-            pickPosition = firstSnake;
-        }
-    }
-    return pickNumbers;
-}
-
-function addPlayerToMyTeam(player, position) {
-    myTeam[position].players.push(player);
-    myTeam[position].count++;
-}
 
 // Round 1 : Take the best avaliable player at either round 1, or round 2
     // Add player to my roster
@@ -481,7 +460,7 @@ function suggestPick() {
     console.log("draft pick Number", draftPickNumber + 1);
     console.log("Current Round", currentRound);
     // Creates a suggestion by executing the strategy of the current round
-    const suggestion = strategyFunctions[currentRound](currentRound);
+    const suggestion = currentRound <= 15 ? strategyFunctions[currentRound](currentRound) : console.log("The draft has ended.");
     const suggestedPosition = suggestion.position.toUpperCase();
     const suggestedPick = suggestion.fullname;
     return [suggestedPosition, suggestedPick];
@@ -497,4 +476,4 @@ function displaySuggestedPick() {
 
 
 
-export { myTeam, displaySuggestedPick, calculatePickNumbers, addPlayerToMyTeam };
+export { myTeam, displaySuggestedPick };
