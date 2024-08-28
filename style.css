@@ -49,6 +49,12 @@ h1 {
     margin-bottom: 20px;
 }
 
+.username-display {
+    font-family: "Roboto", sans-serif;
+    color: #70a3d9;
+    text-decoration: underline;
+}
+
 .suggestion-box {
     display: flex;
     flex-direction: column;

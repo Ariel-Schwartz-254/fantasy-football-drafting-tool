@@ -1,8 +1,9 @@
 // const LEAGUE_ID = "982247738458906624";
-const DRAFT_ID = '982247740212125696';
-const MOCK_DRAFT_ID = '1004422088788107264';
+const DRAFT_ID = '1123236723594473473'; // Forever League Draft ID
+// const MOCK_DRAFT_ID = '1004422088788107264';
 const numberOfTeams = 12;
 const roundsInDraft = 15;
+const isFullPPR = false
 
 let myDraftPickNumbers = [];
 
@@ -46,16 +47,24 @@ function hideUserInputFields() {
     userInformationContainerEl.style.display = "none";
 }
 
+function displayUsername(username) {
+    const usernameDisplayEl = document.getElementById("username-display-container");
+    const usernameDisplay = document.createElement("h4");
+    usernameDisplay.textContent = `Hello ${username}!`;
+    usernameDisplayEl.appendChild(usernameDisplay);
+}
+
 async function getUserInformation() {
     const username = document.getElementById("usernameInput").value;
     const userId = await getUserId(username);
     const myDraftPick = await getDraftPickNumber(userId);
     myDraftPickNumbers = calculatePickNumbers(myDraftPick, numberOfTeams);
     hideUserInputFields();
+    displayUsername(username);
 }
 
 // Adding getUserInformation to global scope so it can be triggered in the HTML
 window.getUserInformation = getUserInformation;
 
 
-export { myDraftPickNumbers , getUserInformation, DRAFT_ID};
+export { myDraftPickNumbers , getUserInformation, DRAFT_ID, isFullPPR };
