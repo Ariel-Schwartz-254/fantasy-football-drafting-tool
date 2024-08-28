@@ -1,5 +1,5 @@
 // const LEAGUE_ID = "982247738458906624";
-const DRAFT_ID = '1131964712087977984'; // Mock Draft ID
+const DRAFT_ID = '1123236723594473473'; // Forever League Draft ID
 // const MOCK_DRAFT_ID = '1004422088788107264';
 const numberOfTeams = 12;
 const roundsInDraft = 15;
